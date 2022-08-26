@@ -16,6 +16,7 @@ struct CryptoAppApp: App {
         WindowGroup {
             NavigationView {
                 HomeView()
+                    .environmentObject(vm)
                     .navigationBarHidden(true)
             }
         }
