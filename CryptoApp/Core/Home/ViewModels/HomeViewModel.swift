@@ -9,8 +9,10 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
+    
     @Published var allCoins: [CoinModel] = []
     @Published var portfolioCoins: [CoinModel] = []
+    @Published var searchBarText: String = ""
     
     private let dataService = CoinDataservice()
     private var cancellables = Set<AnyCancellable>()
