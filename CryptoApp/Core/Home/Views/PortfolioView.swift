@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct PortfolioView: View {
+    
+    @Binding var showPortfolioView: Bool
+        
     var body: some View {
-        Text("Portofolio View")
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("Hi")
+                }
+            }
+            .navigationTitle("Edit Profile")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    XMarkButton(showPortfolioView: $showPortfolioView)
+                }
+            }
+        }
     }
 }
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView()
+        PortfolioView(showPortfolioView: .constant(false))
     }
 }
