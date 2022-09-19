@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PortfolioView: View {
     
-    @Binding var showPortfolioView: Bool
-        
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -21,7 +21,7 @@ struct PortfolioView: View {
             .navigationTitle("Edit Profile")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    XMarkButton(showPortfolioView: $showPortfolioView)
+                    XMarkButton(dismiss: dismiss)
                 }
             }
         }
@@ -30,6 +30,6 @@ struct PortfolioView: View {
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView(showPortfolioView: .constant(false))
+        PortfolioView()
     }
 }
